@@ -1,147 +1,148 @@
-TuPrimeraPagina + GHIGI
+🌐 TuPrimeraPagina + GHIGI
 Tercera Pre-Entrega – Curso Python – Coderhouse
+🚀 Descripción del proyecto
 
-Este proyecto corresponde a la tercera pre-entrega del curso de Python.
-El objetivo es crear una aplicación web utilizando Django con el patrón MVT, incluyendo:
+Este proyecto corresponde a la tercera pre-entrega del curso Python de Coderhouse.
+Se trata de una aplicación web desarrollada con Django, siguiendo el patrón MVT.
 
-Herencia de plantillas (templates)
+Incluye:
 
-Mínimo 3 modelos
+✔ Herencia de plantillas HTML
 
-Formularios para insertar datos en los 3 modelos
+✔ Tres modelos con formularios
 
-Un formulario de búsqueda en la base de datos
+✔ Un formulario de búsqueda en BD
 
-Organización correcta del proyecto y funcionamiento completo
+✔ Proyecto completo y funcional
 
-🚀 Tecnologías utilizadas
+✔ Subido a GitHub como se solicita
+
+🛠️ Tecnologías utilizadas
 
 Python 3.10+
 
 Django 6.0
 
-SQLite (base de datos por defecto)
+HTML5
 
-HTML con herencia de plantillas
+SQLite
 
-📁 Estructura del proyecto
+📁 Estructura del Proyecto
 TuPrimeraPagina+GHIGI/
 │
-├── tuprimera_pagina/        → Configuración principal de Django
-├── blog/                     → App principal del proyecto
-│   ├── templates/blog/       → Templates HTML (con herencia)
-│   ├── models.py             → Modelos Autor, Categoria, Post
-│   ├── forms.py              → Formularios basados en ModelForm
-│   ├── views.py              → Lógica del proyecto
-│   ├── urls.py               → Rutas de la app
+├── tuprimera_pagina/
+│   ├── settings.py
+│   ├── urls.py
+│   └── ...
 │
-└── db.sqlite3                → Base de datos generada por Django
+├── blog/
+│   ├── models.py
+│   ├── forms.py
+│   ├── views.py
+│   ├── urls.py
+│   └── templates/
+│       └── blog/
+│           ├── base.html
+│           ├── inicio.html
+│           ├── crear_autor.html
+│           ├── crear_categoria.html
+│           ├── crear_post.html
+│           └── buscar_post.html
+│
+├── db.sqlite3
+└── README.md
 
 🧱 Modelos incluidos
-1. Autor
+🧍 Autor
+Campo	Tipo
+nombre	CharField
+apellido	CharField
+email	EmailField (único)
+bio	TextField (opcional)
+🗂️ Categoría
+Campo	Tipo
+nombre	CharField
+descripcion	TextField (opcional)
+📝 Post
+Campo	Tipo
+titulo	CharField
+contenido	TextField
+fecha_publicacion	DateField (auto_now_add=True)
+autor	ForeignKey a Autor
+categoria	ForeignKey a Categoria
+🧾 Formularios (forms.py)
 
-nombre
+Se incluyen formularios basados en ModelForm, permitiendo carga y validación automática de datos:
 
-apellido
+AutorForm
 
-email
+CategoriaForm
 
-bio
+PostForm
 
-2. Categoria
+🔍 Formulario de Búsqueda
 
-nombre
+Incluye un formulario que permite buscar posts por título usando:
 
-descripcion
+Post.objects.filter(titulo__icontains=...)
 
-3. Post
 
-titulo
+Página de búsqueda:
 
-contenido
-
-fecha_publicacion (automática)
-
-autor (relación ForeignKey)
-
-categoria (relación ForeignKey)
-
-📝 Formularios incluidos
-
-Se crearon formularios con ModelForm para:
-
-Crear Autor
-
-Crear Categoría
-
-Crear Post
-
-Cada formulario guarda datos directamente en la base de datos.
-
-🔍 Formulario de búsqueda
-
-Incluye un formulario simple para buscar posts por título.
-
-Se accede desde el menú superior.
-
-La búsqueda filtra por coincidencias parciales (icontains).
-
-Muestra una lista de resultados encontrados.
+/buscar/
 
 🌐 Rutas principales
-URL	Función
+URL	Descripción
 /	Página de inicio
 /autor/nuevo/	Crear autor
 /categoria/nueva/	Crear categoría
 /post/nuevo/	Crear post
 /buscar/	Buscar posts
 ▶️ Cómo ejecutar el proyecto
+1. Clonar el repositorio
+git clone https://github.com/TUUSUARIO/TuPrimeraPagina+GHIGI.git
 
-Clonar el repositorio
-
-git clone https://github.com/TuUsuario/TuPrimeraPagina+GHIGI.git
-
-
-Instalar dependencias (si es necesario)
-
+2. Instalar Django (si es necesario)
 pip install django
 
-
-Ejecutar migraciones
-
+3. Aplicar migraciones
 python manage.py migrate
 
-
-Levantar el servidor
-
+4. Ejecutar servidor
 python manage.py runserver
 
+5. Abrir en navegador
 
-Abrir en el navegador:
 👉 http://127.0.0.1:8000/
 
-🧪 Orden recomendado para probar las funcionalidades
+🧪 Orden recomendado para probar
 
 Crear un Autor
 
 Crear una Categoría
 
-Crear un Post (asociándolo al autor y categoría creados)
+Crear un Post
 
-Usar el buscador para encontrar el post por título
+Ir a Buscar Post y probar búsqueda
 
-Ver que los formularios redirigen correctamente a la página de inicio
+Confirmar que redirige correctamente a Inicio
 
-🎯 Estado final del proyecto
+🎯 Estado del Proyecto
 
-✔ Cumple el patrón MVT
-✔ Tiene herencia de plantillas
+✔ Cumple MVT
+
+✔ Cumple herencia de plantillas
+
 ✔ Tiene 3 modelos
-✔ Tiene 3 formularios completos
-✔ Tiene formulario de búsqueda
-✔ Proyecto organizado y funcional
-✔ Subible a GitHub como pre-entrega
 
-🏁 Autor
+✔ Tiene 3 formularios
 
-Matias Ghigi
+✔ Tiene búsqueda en BD
+
+✔ Proyecto perfecto para entregar
+
+✔ Subido completamente a GitHub
+
+👤 Autor
+
+Matías Ghigi
