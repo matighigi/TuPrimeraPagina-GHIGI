@@ -50,6 +50,7 @@ TuPrimeraPagina+GHIGI/
 │
 ├── db.sqlite3
 └── README.md
+```
 
 ## 🧱 Modelos incluidos
 
