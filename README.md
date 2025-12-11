@@ -51,84 +51,123 @@ TuPrimeraPagina+GHIGI/
 ├── db.sqlite3
 └── README.md
 
-🧱 Modelos
-🧍 Autor
-Campo	Tipo
-nombre	CharField
-apellido	CharField
-email	EmailField (único)
-bio	TextField (opcional)
-🗂️ Categoría
-Campo	Tipo
-nombre	CharField
-descripcion	TextField (opcional)
-📝 Post
-Campo	Tipo
-titulo	CharField
-contenido	TextField
-fecha_publicacion	DateField (auto_now_add=True)
-autor	ForeignKey a Autor
-categoria	ForeignKey a Categoría
-🧾 Formularios (forms.py)
+## 🧱 Modelos incluidos
 
-En forms.py se definieron formularios basados en ModelForm, los cuales permiten cargar datos a los modelos:
+### 🧍 Autor
 
-AutorForm
+| Campo   | Tipo                |
+|---------|---------------------|
+| nombre  | CharField           |
+| apellido| CharField           |
+| email   | EmailField (único)  |
+| bio     | TextField (opcional)|
 
-CategoriaForm
+---
 
-PostForm
+### 🗂️ Categoría
 
-Cada formulario incluye validación automática y renderizado sencillo desde los templates HTML.
+| Campo       | Tipo                |
+|-------------|---------------------|
+| nombre      | CharField           |
+| descripcion | TextField (opcional)|
 
-🔍 Búsqueda de posts
+---
 
-Se añadió una vista y un formulario de búsqueda que permite buscar posts por título.
+### 📝 Post
 
-La consulta utiliza coincidencias parciales con:
+| Campo             | Tipo                          |
+|-------------------|-------------------------------|
+| titulo            | CharField                     |
+| contenido         | TextField                     |
+| fecha_publicacion | DateField (auto_now_add=True) |
+| autor             | ForeignKey a Autor            |
+| categoria         | ForeignKey a Categoría        |
 
+---
+
+## 🧾 Formularios
+
+En `forms.py` se definieron formularios basados en **ModelForm**, que permiten crear registros desde la interfaz web:
+
+- `AutorForm`
+- `CategoriaForm`
+- `PostForm`
+
+Cada formulario incluye validación automática y se renderiza en los templates HTML.
+
+---
+
+## 🔍 Búsqueda en la base de datos
+
+La aplicación incluye un formulario que permite buscar **posts por título**.
+
+La consulta se realiza usando coincidencias parciales:
+
+```python
 Post.objects.filter(titulo__icontains=termino)
 
+Ruta del buscador:
 
-Ruta de la búsqueda:
-/buscar/
+`/buscar/`
 
-🌐 Rutas principales del sistema
-URL	Descripción
-/	Página de inicio
-/autor/nuevo/	Crear autor
-/categoria/nueva/	Crear categoría
-/post/nuevo/	Crear post
-/buscar/	Buscar posts
-▶️ Cómo ejecutar el proyecto
-1. Clonar el repositorio
-git clone https://github.com/TUUSUARIO/TuPrimeraPagina+GHIGI.git
+---
 
+## 🌐 Rutas principales
 
-Reemplazar TUUSUARIO por tu usuario real de GitHub.
+| URL                 | Descripción        |
+|---------------------|--------------------|
+| `/`                 | Página de inicio   |
+| `/autor/nuevo/`     | Crear autor        |
+| `/categoria/nueva/` | Crear categoría    |
+| `/post/nuevo/`      | Crear post         |
+| `/buscar/`          | Buscar posts       |
 
-2. Instalar Django (si es necesario)
+---
+
+## ▶️ Cómo ejecutar el proyecto
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/matighigi/TuPrimeraPagina+GHIGI.git
+```
+
+### 2. Instalar Django
+
+```bash
 pip install django
+```
 
-3. Aplicar migraciones
+### 3. Aplicar migraciones
+
+```bash
 python manage.py migrate
+```
 
-4. Ejecutar servidor
+### 4. Ejecutar el servidor
+
+```bash
 python manage.py runserver
+```
 
-5. Abrir en navegador
+### 5. Abrir en el navegador
+
+```cpp
 http://127.0.0.1:8000/
+```
 
-🧪 Orden recomendado para probar
+---
 
-Crear un Autor
+## 🧪 Orden recomendado de prueba
 
-Crear una Categoría
+1. Crear un **Autor**
+2. Crear una **Categoría**
+3. Crear un **Post**
+4. Usar la página de **Buscar Post** para buscar por título
+5. Confirmar funcionamiento de formularios y búsquedas
 
-Crear un Post
+---
 
-Ir a la sección Buscar Post y buscar por el título
+## 👤 Autor
 
-Confirmar que los formularios funcionan y la búsqueda arroja resultados
-
-👤 Autor
+**Matías Ghigi**
