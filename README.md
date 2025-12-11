@@ -106,6 +106,7 @@ La consulta se realiza usando coincidencias parciales:
 
 ```python
 Post.objects.filter(titulo__icontains=termino)
+```
 
 Ruta del buscador:
 
