@@ -1,33 +1,32 @@
-🌐 TuPrimeraPagina + GHIGI
-Tercera Pre-Entrega – Curso Python – Coderhouse
-🚀 Descripción del proyecto
+# TuPrimeraPagina+GHIGI
 
-Este proyecto corresponde a la tercera pre-entrega del curso Python de Coderhouse.
-Se trata de una aplicación web desarrollada con Django, siguiendo el patrón MVT.
+## Tercera Pre-Entrega – Curso Python – Coderhouse
+
+Este proyecto corresponde a la tercera pre-entrega del curso Python de Coderhouse.  
+Es una aplicación web desarrollada con **Django**, siguiendo el patrón **MVT**.
 
 Incluye:
 
-✔ Herencia de plantillas HTML
+- Herencia de plantillas HTML  
+- Tres modelos con formularios  
+- Un formulario de búsqueda en base de datos  
+- Proyecto completo y funcional  
+- Subido a GitHub como se solicita  
 
-✔ Tres modelos con formularios
+---
 
-✔ Un formulario de búsqueda en BD
+## 🛠 Tecnologías utilizadas
 
-✔ Proyecto completo y funcional
+- Python 3.10+
+- Django 6.0
+- HTML5
+- SQLite
 
-✔ Subido a GitHub como se solicita
+---
 
-🛠️ Tecnologías utilizadas
+## 📁 Estructura del proyecto
 
-Python 3.10+
-
-Django 6.0
-
-HTML5
-
-SQLite
-
-📁 Estructura del Proyecto
+```text
 TuPrimeraPagina+GHIGI/
 │
 ├── tuprimera_pagina/
@@ -52,7 +51,7 @@ TuPrimeraPagina+GHIGI/
 ├── db.sqlite3
 └── README.md
 
-🧱 Modelos incluidos
+🧱 Modelos
 🧍 Autor
 Campo	Tipo
 nombre	CharField
@@ -69,10 +68,10 @@ titulo	CharField
 contenido	TextField
 fecha_publicacion	DateField (auto_now_add=True)
 autor	ForeignKey a Autor
-categoria	ForeignKey a Categoria
+categoria	ForeignKey a Categoría
 🧾 Formularios (forms.py)
 
-Se incluyen formularios basados en ModelForm, permitiendo carga y validación automática de datos:
+En forms.py se definieron formularios basados en ModelForm, los cuales permiten cargar datos a los modelos:
 
 AutorForm
 
@@ -80,18 +79,21 @@ CategoriaForm
 
 PostForm
 
-🔍 Formulario de Búsqueda
+Cada formulario incluye validación automática y renderizado sencillo desde los templates HTML.
 
-Incluye un formulario que permite buscar posts por título usando:
+🔍 Búsqueda de posts
 
-Post.objects.filter(titulo__icontains=...)
+Se añadió una vista y un formulario de búsqueda que permite buscar posts por título.
+
+La consulta utiliza coincidencias parciales con:
+
+Post.objects.filter(titulo__icontains=termino)
 
 
-Página de búsqueda:
-
+Ruta de la búsqueda:
 /buscar/
 
-🌐 Rutas principales
+🌐 Rutas principales del sistema
 URL	Descripción
 /	Página de inicio
 /autor/nuevo/	Crear autor
@@ -101,6 +103,9 @@ URL	Descripción
 ▶️ Cómo ejecutar el proyecto
 1. Clonar el repositorio
 git clone https://github.com/TUUSUARIO/TuPrimeraPagina+GHIGI.git
+
+
+Reemplazar TUUSUARIO por tu usuario real de GitHub.
 
 2. Instalar Django (si es necesario)
 pip install django
@@ -112,8 +117,7 @@ python manage.py migrate
 python manage.py runserver
 
 5. Abrir en navegador
-
-👉 http://127.0.0.1:8000/
+http://127.0.0.1:8000/
 
 🧪 Orden recomendado para probar
 
@@ -123,26 +127,8 @@ Crear una Categoría
 
 Crear un Post
 
-Ir a Buscar Post y probar búsqueda
+Ir a la sección Buscar Post y buscar por el título
 
-Confirmar que redirige correctamente a Inicio
-
-🎯 Estado del Proyecto
-
-✔ Cumple MVT
-
-✔ Cumple herencia de plantillas
-
-✔ Tiene 3 modelos
-
-✔ Tiene 3 formularios
-
-✔ Tiene búsqueda en BD
-
-✔ Proyecto perfecto para entregar
-
-✔ Subido completamente a GitHub
+Confirmar que los formularios funcionan y la búsqueda arroja resultados
 
 👤 Autor
-
-Matías Ghigi
